@@ -1,2 +1,13 @@
-// This file is intentionally left empty as we're moving to GitHub deployment
-// The file will be removed in the next commit
+// Cloudflare Pages deployment configuration
+// This file contains build settings that can be referenced in cloudflare.json
+// The actual deployment is handled automatically by Cloudflare Pages
+
+export const config = {
+  build: {
+    command: "npm run build",
+    outputDirectory: "dist/public",
+    environment: {
+      NODE_VERSION: "20"
+    }
+  }
+};

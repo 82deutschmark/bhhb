@@ -27,13 +27,29 @@ The production build will be in the `dist/public` directory.
 
 ## Deployment
 
-This project is deployed via GitHub. The production build is hosted directly from the repository.
+This project is deployed via GitHub and Cloudflare Pages. The production build is automatically deployed when changes are pushed to the main branch.
 
 To deploy:
 
 1. Ensure your changes are committed
 2. Push to the main branch
-3. The site will be automatically deployed
+3. Cloudflare Pages will automatically build and deploy your site from the `dist/public` directory
+
+## DNS Configuration
+
+For the domain configuration in Cloudflare:
+
+1. For www.bighappyholding.com:
+   - Type: CNAME
+   - Name: www
+   - Target: bighappyholding.com
+   - Proxy status: Proxied
+
+2. For bighappyholding.com (root domain):
+   - Type: A
+   - Name: @ (or empty)
+   - Target: 192.0.2.1 (Cloudflare managed)
+   - Proxy status: Proxied
 
 ## Project Structure
 
