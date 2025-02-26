@@ -27,32 +27,30 @@ The production build will be in the `dist/public` directory.
 
 ## Deploying to Squarespace
 
-To deploy to Squarespace (bighappyhc.com), you'll need:
+To deploy to your Squarespace site (bighappyhc.com):
 
-1. Squarespace App Password
-2. Your Squarespace Website ID
-
-These should be set as environment variables:
-- `SQUARESPACE_APP_PASSWORD`
-- `SQUARESPACE_WEBSITE_ID`
-
-Then run:
-
+1. Build the project:
 ```bash
-# Build and deploy to Squarespace
 npm run build
-node scripts/deploy.js
 ```
 
-The script will:
-1. Verify the build exists
-2. Upload all static assets to Squarespace
-3. Configure the necessary page settings
+2. In your Squarespace dashboard:
+   - Go to Settings > Advanced > Developer Mode
+   - Enable Developer Mode
+   - Upload the contents of the `dist/public` directory
+   - Your custom code will override the default Squarespace template
 
-## Assets
+**Important Notes:**
+- Make sure to keep your Squarespace account active
+- Backup any existing content before enabling Developer Mode
+- Test the site thoroughly after deployment
 
-- Company logos and images are stored in `client/public/assets/`
-- Ensure all assets are properly optimized before deployment
+## Project Structure
+
+- `client/src/` - React frontend code
+- `server/` - Express backend setup
+- `shared/` - Shared types and schemas
+- `scripts/` - Build and utility scripts
 
 ## Contact
 
