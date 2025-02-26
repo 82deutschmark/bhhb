@@ -76,21 +76,11 @@ export default function Contact() {
               </h3>
               <div className="space-y-4 text-[#333333]">
                 <p>
-                  <strong>Address:</strong>
-                  <br />
-                  123 Business Avenue
-                  <br />
-                  New York, NY 10001
-                </p>
-                <p>
                   <strong>Email:</strong>
                   <br />
-                  contact@bighappy.com
-                </p>
-                <p>
-                  <strong>Phone:</strong>
-                  <br />
-                  +1 (555) 123-4567
+                  <a href="mailto:mark@bighappyhc.com" className="hover:text-[#ffcc00] transition-colors">
+                    mark@bighappyhc.com
+                  </a>
                 </p>
               </div>
             </div>
