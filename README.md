@@ -23,19 +23,31 @@ To create a production build:
 npm run build
 ```
 
-The production build will be in the `dist` directory.
+The production build will be in the `dist/public` directory.
 
 ## Deploying to Squarespace
 
-To deploy to Squarespace (bighappyhc.com):
+To deploy to Squarespace (bighappyhc.com), you'll need:
 
-1. Build the project using `npm run build`
-2. The production files will be in the `dist/public` directory
-3. In your Squarespace dashboard:
-   - Go to Settings > Domains
-   - Connect your domain (bighappyhc.com)
-   - Under Advanced Settings, enable Developer Mode
-   - Upload the contents of the `dist/public` directory
+1. Squarespace App Password
+2. Your Squarespace Website ID
+
+These should be set as environment variables:
+- `SQUARESPACE_APP_PASSWORD`
+- `SQUARESPACE_WEBSITE_ID`
+
+Then run:
+
+```bash
+# Build and deploy to Squarespace
+npm run build
+node scripts/deploy.js
+```
+
+The script will:
+1. Verify the build exists
+2. Upload all static assets to Squarespace
+3. Configure the necessary page settings
 
 ## Assets
 
