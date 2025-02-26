@@ -25,8 +25,12 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
           <Link href="/">
-            <a className="text-2xl font-montserrat font-bold text-white">
-              Big Happy
+            <a className="flex items-center">
+              <img
+                src="/BHHC-logo-dark.png"
+                alt="Big Happy Holdings"
+                className="h-12 md:h-16"
+              />
             </a>
           </Link>
           <div className="hidden md:flex space-x-8">
