@@ -37,3 +37,7 @@ Thumbs.db
 # Vite
 vite.config.ts.*
 *.tar.gz
+
+# Logs
+logs
+*.log
