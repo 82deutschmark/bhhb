@@ -27,7 +27,7 @@ export default function Header() {
           <Link href="/">
             <a className="flex items-center">
               <motion.img
-                src="/assets/BHHC3.png"
+                src="/BHHC3.png"
                 alt="Big Happy Holdings"
                 className="h-12 md:h-16"
                 initial={{ opacity: 0 }}
