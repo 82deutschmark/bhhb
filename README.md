@@ -30,12 +30,12 @@ The production build will be in the `dist` directory.
 To deploy to Squarespace (bighappyhc.com):
 
 1. Build the project using `npm run build`
-2. The production files will be in the `dist` directory
+2. The production files will be in the `dist/public` directory
 3. In your Squarespace dashboard:
    - Go to Settings > Domains
    - Connect your domain (bighappyhc.com)
    - Under Advanced Settings, enable Developer Mode
-   - Upload the contents of the `dist` directory
+   - Upload the contents of the `dist/public` directory
 
 ## Assets
 

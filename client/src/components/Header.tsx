@@ -25,18 +25,14 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
           <Link href="/">
-            <a className="flex items-center">
-              <motion.img
-                src="/BHHC3.png"
-                alt="Big Happy Holdings"
-                className="h-12 md:h-16"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              />
-            </a>
+            <motion.a 
+              className="text-2xl font-montserrat font-bold text-white"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              BHHC
+            </motion.a>
           </Link>
           <div className="hidden md:flex space-x-8">
             {["About", "Team", "Contact"].map((item, index) => (
