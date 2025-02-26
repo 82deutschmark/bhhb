@@ -12,30 +12,27 @@ export default function About() {
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-[#1a1a1a] mb-6">
-            Our Mission
+            Our Structure
           </h2>
           <p className="text-lg text-[#333333] mb-12 leading-relaxed">
-            At Big Happy Holding Company, we believe in fostering growth through
-            strategic partnerships and innovative solutions. Our mission is to
-            create lasting value for our stakeholders while maintaining the highest
-            standards of corporate responsibility and ethical business practices.
+            Big Happy Holdings operates under a robust management structure, with decisions made by our Management Committee through majority voting. Our leadership team brings together diverse expertise across technology, finance, creative, and legal domains to ensure comprehensive oversight of our operations.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Innovation",
+                title: "Leadership",
                 description:
-                  "Pushing boundaries and embracing new technologies to stay ahead.",
+                  "Guided by a Management Committee with proportional voting power based on membership interests.",
               },
               {
-                title: "Excellence",
+                title: "Expertise",
                 description:
-                  "Committed to delivering outstanding results in everything we do.",
+                  "Combining technical, financial, creative, and legal excellence in our executive team.",
               },
               {
-                title: "Integrity",
+                title: "Governance",
                 description:
-                  "Building trust through transparent and ethical business practices.",
+                  "Decisions made through majority voting, ensuring balanced and considered leadership.",
               },
             ].map((item) => (
               <motion.div

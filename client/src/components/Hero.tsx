@@ -7,13 +7,11 @@ export default function Hero() {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf')",
+            "linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.7))",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
-      </div>
+      />
       <div className="container mx-auto px-4 z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,12 +20,10 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-4xl md:text-6xl font-montserrat font-bold text-white mb-6">
-            Building Tomorrow's Success Today
+            Welcome to Big Happy Holdings
           </h1>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Big Happy Holding Company is your trusted partner in business growth
-            and innovation. We transform visions into reality through strategic
-            investments and operational excellence.
+            A dynamic holding company led by industry experts in technology, finance, creative direction, and legal affairs. We combine strategic vision with operational excellence to drive sustainable growth and innovation.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
