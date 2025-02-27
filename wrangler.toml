@@ -1,10 +1,7 @@
 name = "bighappyholding"
-main = "dist/index.js"
+main = "dist/worker.js"
 compatibility_date = "2023-12-01"
 nodejs_compat = true
 
 [site]
 bucket = "dist/public"
-
-[build]
-command = "npm run build"
