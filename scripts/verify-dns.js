@@ -8,6 +8,7 @@
 
 const dns = require('dns');
 const { promisify } = require('util');
+const { listDnsRecords, getZoneInfo } = require('./cloudflare-api');
 
 const lookup = promisify(dns.lookup);
 const resolve4 = promisify(dns.resolve4);
@@ -20,6 +21,41 @@ async function verifyDns() {
   console.log('Verifying DNS configuration...');
   
   try {
+    // First, verify using Cloudflare API
+    console.log('\nChecking DNS records in Cloudflare...');
+    try {
+      const records = await listDnsRecords();
+      console.log('✓ Successfully connected to Cloudflare API');
+      
+      const rootRecord = records.result.find(r => r.type === 'A' && (r.name === domainRoot || r.name === '@'));
+      const wwwRecord = records.result.find(r => (r.type === 'CNAME' || r.type === 'A') && r.name === domainWww);
+      
+      if (rootRecord) {
+        console.log('✓ Root domain record found in Cloudflare:');
+        console.log(`  Type: ${rootRecord.type}`);
+        console.log(`  Content: ${rootRecord.content}`);
+        console.log(`  Proxied: ${rootRecord.proxied}`);
+      } else {
+        console.log('✗ Root domain record not found in Cloudflare');
+      }
+      
+      if (wwwRecord) {
+        console.log('✓ WWW subdomain record found in Cloudflare:');
+        console.log(`  Type: ${wwwRecord.type}`);
+        console.log(`  Content: ${wwwRecord.content}`);
+        console.log(`  Proxied: ${wwwRecord.proxied}`);
+      } else {
+        console.log('✗ WWW subdomain record not found in Cloudflare');
+      }
+      
+    } catch (cloudflareError) {
+      console.error('✗ Could not verify via Cloudflare API:', cloudflareError.message);
+      console.log('Falling back to DNS queries...');
+    }
+    
+    // Then, verify through public DNS
+    console.log('\nVerifying through public DNS queries...');
+    
     // Check root domain (A record)
     console.log(`\nChecking A record for ${domainRoot}`);
     const rootResult = await resolve4(domainRoot);
@@ -54,4 +90,9 @@ async function verifyDns() {
   }
 }
 
-verifyDns();
+// Run the verification if this script is executed directly
+if (require.main === module) {
+  verifyDns().catch(console.error);
+}
+
+module.exports = { verifyDns };
