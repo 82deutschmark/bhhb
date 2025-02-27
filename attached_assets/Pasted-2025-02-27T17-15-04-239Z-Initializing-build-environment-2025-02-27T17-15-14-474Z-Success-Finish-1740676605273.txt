@@ -1,0 +1,57 @@
+2025-02-27T17:15:04.239Z	Initializing build environment...
+2025-02-27T17:15:14.474Z	Success: Finished initializing build environment
+2025-02-27T17:15:15.337Z	Cloning repository...
+2025-02-27T17:15:16.574Z	Detected the following tools from environment: npm@10.8.3, nodejs@22.9.0
+2025-02-27T17:15:16.575Z	Installing project dependencies: npm clean-install --progress=false
+2025-02-27T17:15:23.910Z	npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+2025-02-27T17:15:24.301Z	npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+2025-02-27T17:15:38.275Z	
+2025-02-27T17:15:38.276Z	added 511 packages, and audited 512 packages in 21s
+2025-02-27T17:15:38.277Z	
+2025-02-27T17:15:38.277Z	67 packages are looking for funding
+2025-02-27T17:15:38.277Z	  run `npm fund` for details
+2025-02-27T17:15:38.301Z	
+2025-02-27T17:15:38.302Z	7 moderate severity vulnerabilities
+2025-02-27T17:15:38.302Z	
+2025-02-27T17:15:38.303Z	To address issues that do not require attention, run:
+2025-02-27T17:15:38.303Z	  npm audit fix
+2025-02-27T17:15:38.303Z	
+2025-02-27T17:15:38.304Z	To address all issues (including breaking changes), run:
+2025-02-27T17:15:38.304Z	  npm audit fix --force
+2025-02-27T17:15:38.304Z	
+2025-02-27T17:15:38.304Z	Run `npm audit` for details.
+2025-02-27T17:15:38.356Z	Executing user build command: npm run build
+2025-02-27T17:15:38.661Z	
+2025-02-27T17:15:38.661Z	> rest-express@1.0.0 build
+2025-02-27T17:15:38.661Z	> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+2025-02-27T17:15:38.661Z	
+2025-02-27T17:15:39.207Z	vite v5.4.14 building for production...
+2025-02-27T17:15:39.308Z	transforming...
+2025-02-27T17:15:47.172Z	✓ 2022 modules transformed.
+2025-02-27T17:15:47.618Z	rendering chunks...
+2025-02-27T17:15:47.630Z	computing gzip size...
+2025-02-27T17:15:47.650Z	../dist/public/index.html                   1.59 kB │ gzip:   0.63 kB
+2025-02-27T17:15:47.651Z	../dist/public/assets/index-DdeIIPa7.css   57.63 kB │ gzip:  10.17 kB
+2025-02-27T17:15:47.651Z	../dist/public/assets/index-BSx9N0Hp.js   357.98 kB │ gzip: 115.47 kB
+2025-02-27T17:15:47.651Z	✓ built in 8.40s
+2025-02-27T17:15:47.715Z	
+2025-02-27T17:15:47.715Z	  dist/index.js  4.7kb
+2025-02-27T17:15:47.716Z	
+2025-02-27T17:15:47.716Z	⚡ Done in 4ms
+2025-02-27T17:15:47.726Z	Success: Build command completed
+2025-02-27T17:15:47.727Z	Executing user deploy command: npx wrangler deploy
+2025-02-27T17:15:49.147Z	npm warn exec The following package was not found and will be installed: wrangler@3.111.0
+2025-02-27T17:15:55.656Z	npm warn deprecated rollup-plugin-inject@3.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-inject.
+2025-02-27T17:15:55.871Z	npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+2025-02-27T17:16:02.132Z	
+2025-02-27T17:16:02.132Z	 ⛅️ wrangler 3.111.0
+2025-02-27T17:16:02.132Z	--------------------
+2025-02-27T17:16:02.132Z	
+2025-02-27T17:16:02.140Z	
+2025-02-27T17:16:02.214Z	✘ [ERROR] Missing entry-point: The entry-point should be specified via the command line (e.g. `wrangler deploy path/to/script`) or the `main` config field.
+2025-02-27T17:16:02.215Z	
+2025-02-27T17:16:02.215Z	
+2025-02-27T17:16:02.215Z	
+2025-02-27T17:16:02.215Z	Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+2025-02-27T17:16:02.237Z	🪵  Logs were written to "/opt/buildhome/.config/.wrangler/logs/wrangler-2025-02-27_17-16-01_422.log"
+2025-02-27T17:16:02.394Z	Failed: error occurred while running deploy command
