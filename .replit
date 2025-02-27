@@ -7,8 +7,8 @@ channel = "stable-24_05"
 
 [deployment]
 deploymentTarget = "cloudrun"
-build = ["sh", "-c", "npm run build"]
-run = ["sh", "-c", "npx wrangler deploy dist/index.js --config wrangler.toml"]
+build = ["sh", "-c", "npm run build && cp wrangler.toml dist/"]
+run = ["sh", "-c", "cd dist && npx wrangler deploy index.js --config wrangler.toml"]
 
 [[ports]]
 localPort = 5000

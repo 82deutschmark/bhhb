@@ -18,10 +18,20 @@ try {
   process.exit(1);
 }
 
+// Copy wrangler.toml to dist directory
+console.log('\nCopying wrangler.toml to dist directory...');
+try {
+  execSync('cp wrangler.toml dist/', { stdio: 'inherit' });
+  console.log('✅ Configuration copied successfully');
+} catch (error) {
+  console.error('❌ Failed to copy configuration:', error.message);
+  process.exit(1);
+}
+
 // Deploy to Cloudflare Workers
 console.log('\nDeploying to Cloudflare Workers...');
 try {
-  execSync('npx wrangler deploy dist/index.js --config wrangler.toml', { stdio: 'inherit' });
+  execSync('cd dist && npx wrangler deploy index.js --config wrangler.toml', { stdio: 'inherit' });
   console.log('✅ Deployment completed successfully');
 } catch (error) {
   console.error('❌ Deployment failed:', error.message);
