@@ -10,6 +10,6 @@ export const config = {
     }
   },
   deploy: {
-    command: "npx wrangler deploy --config wrangler.toml"
+    command: "npx wrangler deploy dist/index.js --config wrangler.toml"
   }
 };

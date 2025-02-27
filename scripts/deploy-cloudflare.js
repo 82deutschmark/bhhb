@@ -21,7 +21,7 @@ try {
 // Deploy to Cloudflare Workers
 console.log('\nDeploying to Cloudflare Workers...');
 try {
-  execSync('npx wrangler deploy --config wrangler.toml', { stdio: 'inherit' });
+  execSync('npx wrangler deploy dist/index.js --config wrangler.toml', { stdio: 'inherit' });
   console.log('✅ Deployment completed successfully');
 } catch (error) {
   console.error('❌ Deployment failed:', error.message);
