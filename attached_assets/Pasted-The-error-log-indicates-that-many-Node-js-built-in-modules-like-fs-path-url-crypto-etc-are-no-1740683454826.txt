@@ -1,0 +1,46 @@
+The error log indicates that many Node.js built‐in modules (like fs, path, url, crypto, etc.) are not being resolved during deployment. This happens because your Worker code (and its dependencies) are importing Node.js–only modules (using either "node:" imports or plain names) that aren’t available by default in the Cloudflare Workers runtime. To work around this, you need to enable Node.js compatibility mode.
+
+Here’s what to do:
+
+1. **Enable Node.js Compatibility:**  
+   In your wrangler.toml file, add the following flag at the top level:
+   ```toml
+   node_compat = true
+   ```
+   This tells Wrangler to polyfill Node.js built-in modules so that packages (like those from your Vite build or Express) work as expected.  
+   citehttps://developers.cloudflare.com/workers/runtime-apis/nodejs/
+
+2. **Use the ES Module Format:**  
+   Your error log also mentions that "import.meta" isn’t available with the IIFE output format. Make sure your bundler (in this case, esbuild) is set to output ES modules (esm). Your build command already uses `--format=esm`, so that part looks good.  
+   Also, ensure your entry file exports a default export if you’re targeting the module Workers format. For example:
+   ```js
+   export default {
+     async fetch(request, env) {
+       // your worker code here
+       return new Response("Hello from Worker!");
+     }
+   }
+   ```
+
+3. **Check Your Worker Name:**  
+   The warning about a mismatched Worker name isn’t fatal, but it’s good to ensure that the name in your wrangler.toml matches what you expect.
+
+After making these changes, re-run your deploy command. Your updated wrangler.toml might look like this:
+
+```toml
+name = "bighappyholding"  # or your desired name; note the CI expects "bhhb2"—adjust accordingly if needed
+main = "dist/index.js"
+compatibility_date = "2022-07-12"
+workers_dev = false
+node_compat = true
+
+[site]
+bucket = ".output/public"
+```
+
+Then deploy with:
+```bash
+npx wrangler deploy dist/index.js --config wrangler.toml
+```
+
+These adjustments should resolve the missing module errors and let your Worker run with Node.js–specific code.
