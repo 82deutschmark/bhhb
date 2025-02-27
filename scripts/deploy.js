@@ -1,6 +1,5 @@
-// Cloudflare Pages deployment configuration
-// This file contains build settings that can be referenced in cloudflare.json
-// The actual deployment is handled automatically by Cloudflare Pages
+// Cloudflare Workers deployment configuration
+// This file contains build settings for Cloudflare Workers deployment
 
 export const config = {
   build: {
@@ -9,5 +8,8 @@ export const config = {
     environment: {
       NODE_VERSION: "20"
     }
+  },
+  deploy: {
+    command: "npx wrangler deploy --config wrangler.toml"
   }
 };
