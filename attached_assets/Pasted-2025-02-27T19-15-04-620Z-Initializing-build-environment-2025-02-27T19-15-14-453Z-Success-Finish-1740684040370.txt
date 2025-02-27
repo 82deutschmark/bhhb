@@ -1,0 +1,192 @@
+2025-02-27T19:15:04.620Z	Initializing build environment...
+2025-02-27T19:15:14.453Z	Success: Finished initializing build environment
+2025-02-27T19:15:14.698Z	Cloning repository...
+2025-02-27T19:15:16.369Z	Detected the following tools from environment: npm@10.8.3, nodejs@22.9.0
+2025-02-27T19:15:16.370Z	Installing project dependencies: npm clean-install --progress=false
+2025-02-27T19:15:23.609Z	npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+2025-02-27T19:15:23.641Z	npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+2025-02-27T19:15:04.620Z	Initializing build environment...
+2025-02-27T19:15:14.453Z	Success: Finished initializing build environment
+2025-02-27T19:15:14.698Z	Cloning repository...
+2025-02-27T19:15:16.369Z	Detected the following tools from environment: npm@10.8.3, nodejs@22.9.0
+2025-02-27T19:15:16.370Z	Installing project dependencies: npm clean-install --progress=false
+2025-02-27T19:15:23.609Z	npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+2025-02-27T19:15:23.641Z	npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+2025-02-27T19:15:36.388Z	
+2025-02-27T19:15:36.388Z	added 527 packages, and audited 528 packages in 20s
+2025-02-27T19:15:36.388Z	
+2025-02-27T19:15:36.388Z	68 packages are looking for funding
+2025-02-27T19:15:36.388Z	  run `npm fund` for details
+2025-02-27T19:15:36.420Z	
+2025-02-27T19:15:36.420Z	7 moderate severity vulnerabilities
+2025-02-27T19:15:36.421Z	
+2025-02-27T19:15:36.421Z	To address issues that do not require attention, run:
+2025-02-27T19:15:36.423Z	  npm audit fix
+2025-02-27T19:15:36.424Z	
+2025-02-27T19:15:36.424Z	To address all issues (including breaking changes), run:
+2025-02-27T19:15:36.424Z	  npm audit fix --force
+2025-02-27T19:15:36.424Z	
+2025-02-27T19:15:36.425Z	Run `npm audit` for details.
+2025-02-27T19:15:36.466Z	Executing user build command: npm run build
+2025-02-27T19:15:37.920Z	
+2025-02-27T19:15:37.920Z	> rest-express@1.0.0 build
+2025-02-27T19:15:37.920Z	> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+2025-02-27T19:15:37.921Z	
+2025-02-27T19:15:38.350Z	vite v5.4.14 building for production...
+2025-02-27T19:15:38.433Z	transforming...
+2025-02-27T19:15:43.685Z	✓ 2022 modules transformed.
+2025-02-27T19:15:44.003Z	rendering chunks...
+2025-02-27T19:15:44.011Z	computing gzip size...
+2025-02-27T19:15:44.030Z	../dist/public/index.html                   1.59 kB │ gzip:   0.63 kB
+2025-02-27T19:15:44.030Z	../dist/public/assets/index-DdeIIPa7.css   57.63 kB │ gzip:  10.17 kB
+2025-02-27T19:15:44.030Z	../dist/public/assets/index-BSx9N0Hp.js   357.98 kB │ gzip: 115.47 kB
+2025-02-27T19:15:44.030Z	✓ built in 5.65s
+2025-02-27T19:15:44.086Z	
+2025-02-27T19:15:44.086Z	  dist/index.js  4.7kb
+2025-02-27T19:15:44.086Z	
+2025-02-27T19:15:44.086Z	⚡ Done in 4ms
+2025-02-27T19:15:44.099Z	Success: Build command completed
+2025-02-27T19:15:44.100Z	Executing user deploy command: npx wrangler deploy dist/index.js --config wrangler.toml
+2025-02-27T19:15:45.327Z	npm warn exec The following package was not found and will be installed: wrangler@3.111.0
+2025-02-27T19:16:12.626Z	npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+2025-02-27T19:16:12.627Z	npm warn deprecated rollup-plugin-inject@3.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-inject.
+2025-02-27T19:16:17.832Z	
+2025-02-27T19:16:17.832Z	 ⛅️ wrangler 3.111.0
+2025-02-27T19:16:17.833Z	--------------------
+2025-02-27T19:16:17.833Z	
+2025-02-27T19:16:17.928Z	▲ [WARNING] Failed to match Worker name. Your config file is using the Worker name "bighappyholding", but the CI system expected "bhhb2". Overriding using the CI provided Worker name. Workers Builds connected builds will attempt to open a pull request to resolve this config name mismatch.
+2025-02-27T19:16:17.928Z	
+2025-02-27T19:16:17.929Z	
+2025-02-27T19:16:19.408Z	▲ [WARNING] You are using `node_compat`, which is a legacy Node.js compatibility option. Instead, use the `nodejs_compat` compatibility flag. This includes the functionality from legacy `node_compat` polyfills and natively implemented Node.js APIs. See https://developers.cloudflare.com/workers/runtime-apis/nodejs for more information.
+2025-02-27T19:16:19.408Z	
+2025-02-27T19:16:19.408Z	
+2025-02-27T19:16:20.779Z	▲ [WARNING] 						The package "node:fs/promises" wasn't found on the file system but is built into node.
+2025-02-27T19:16:20.779Z	
+2025-02-27T19:16:20.781Z	  						Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to https://developers.cloudflare.com/workers/runtime-apis/nodejs/ for more details. Imported from:
+2025-02-27T19:16:20.781Z	  						 - node_modules/vite/dist/node/index.js
+2025-02-27T19:16:20.781Z	  - node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js
+2025-02-27T19:16:20.782Z	  - node_modules/rollup/dist/es/rollup.js
+2025-02-27T19:16:20.782Z	  - node_modules/rollup/dist/es/shared/node-entry.js
+2025-02-27T19:16:20.782Z	  - node_modules/rollup/dist/es/shared/watch.js
+2025-02-27T19:16:20.783Z	
+2025-02-27T19:16:20.783Z	
+2025-02-27T19:16:20.783Z	▲ [WARNING] 						The package "node:perf_hooks" wasn't found on the file system but is built into node.
+2025-02-27T19:16:20.785Z	
+2025-02-27T19:16:20.788Z	  						Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to https://developers.cloudflare.com/workers/runtime-apis/nodejs/ for more details. Imported from:
+2025-02-27T19:16:20.789Z	  						 - node_modules/vite/dist/node/index.js
+2025-02-27T19:16:20.789Z	  - node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js
+2025-02-27T19:16:20.791Z	  - node_modules/rollup/dist/es/rollup.js
+2025-02-27T19:16:20.792Z	  - node_modules/rollup/dist/es/shared/node-entry.js
+2025-02-27T19:16:20.795Z	  - node_modules/rollup/dist/es/shared/watch.js
+2025-02-27T19:16:20.796Z	
+2025-02-27T19:16:20.797Z	
+2025-02-27T19:16:20.797Z	▲ [WARNING] 						The package "node:v8" wasn't found on the file system but is built into node.
+2025-02-27T19:16:20.798Z	
+2025-02-27T19:16:20.798Z	  						Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to https://developers.cloudflare.com/workers/runtime-apis/nodejs/ for more details. Imported from:
+2025-02-27T19:16:20.798Z	  						 - node_modules/vite/dist/node/index.js
+2025-02-27T19:16:20.798Z	  - node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js
+2025-02-27T19:16:20.798Z	
+2025-02-27T19:16:20.799Z	
+2025-02-27T19:16:20.799Z	▲ [WARNING] 						The package "node:worker_threads" wasn't found on the file system but is built into node.
+2025-02-27T19:16:20.799Z	
+2025-02-27T19:16:20.799Z	  						Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to https://developers.cloudflare.com/workers/runtime-apis/nodejs/ for more details. Imported from:
+2025-02-27T19:16:20.799Z	  						 - node_modules/vite/dist/node/index.js
+2025-02-27T19:16:20.800Z	  - node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js
+2025-02-27T19:16:20.800Z	
+2025-02-27T19:16:20.800Z	
+2025-02-27T19:16:20.801Z	▲ [WARNING] The package "node:http2" wasn't found on the file system but is built into node.
+2025-02-27T19:16:20.801Z	
+2025-02-27T19:16:20.801Z	  Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to https://developers.cloudflare.com/workers/runtime-apis/nodejs/ for more details. Imported from:
+2025-02-27T19:16:20.801Z	   - node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js
+2025-02-27T19:16:20.801Z	
+2025-02-27T19:16:20.802Z	
+2025-02-27T19:16:20.802Z	▲ [WARNING] "import.meta" is not available with the "iife" output format and will be empty [empty-import-meta]
+2025-02-27T19:16:20.802Z	
+2025-02-27T19:16:20.802Z	    dist/index.js:25:31:
+2025-02-27T19:16:20.802Z	      25 │ var __filename = fileURLToPath(import.meta.url);
+2025-02-27T19:16:20.802Z	         ╵                                ~~~~~~~~~~~
+2025-02-27T19:16:20.802Z	
+2025-02-27T19:16:20.803Z	  You need to set the output format to "esm" for "import.meta" to work correctly.
+2025-02-27T19:16:20.803Z	
+2025-02-27T19:16:20.803Z	
+2025-02-27T19:16:20.803Z	▲ [WARNING] "import.meta" is not available with the "iife" output format and will be empty [empty-import-meta]
+2025-02-27T19:16:20.803Z	
+2025-02-27T19:16:20.803Z	    dist/index.js:53:33:
+2025-02-27T19:16:20.804Z	      53 │ var __filename2 = fileURLToPath2(import.meta.url);
+2025-02-27T19:16:20.804Z	         ╵                                  ~~~~~~~~~~~
+2025-02-27T19:16:20.804Z	
+2025-02-27T19:16:20.805Z	  You need to set the output format to "esm" for "import.meta" to work correctly.
+2025-02-27T19:16:20.805Z	
+2025-02-27T19:16:20.805Z	
+2025-02-27T19:16:20.805Z	✘ [ERROR] Build failed with 5 errors:
+2025-02-27T19:16:20.805Z	
+2025-02-27T19:16:20.805Z	  ✘ [ERROR] Top-level await is currently not supported with the "iife" output format
+2025-02-27T19:16:20.805Z	  
+2025-02-27T19:16:20.805Z	      dist/index.js:33:6:
+2025-02-27T19:16:20.805Z	        33 │       await import("@replit/vite-plugin-cartographer").then(
+2025-02-27T19:16:20.805Z	           ╵       ~~~~~
+2025-02-27T19:16:20.805Z	  
+2025-02-27T19:16:20.805Z	  
+2025-02-27T19:16:20.806Z	  ✘ [ERROR] Could not resolve "fs/promises"
+2025-02-27T19:16:20.807Z	  
+2025-02-27T19:16:20.807Z	      node_modules/@replit/vite-plugin-cartographer/dist/index.mjs:2:15:
+2025-02-27T19:16:20.807Z	        2 │ import fs from "fs/promises";
+2025-02-27T19:16:20.807Z	          ╵                ~~~~~~~~~~~~~
+2025-02-27T19:16:20.807Z	  
+2025-02-27T19:16:20.808Z	    The package "fs/promises" wasn't found on the file system but is built into node.
+2025-02-27T19:16:20.808Z	    - Try removing the legacy "node_compat" setting and add the "nodejs_compat" compatibility flag in your project
+2025-02-27T19:16:20.808Z	    
+2025-02-27T19:16:20.808Z	  
+2025-02-27T19:16:20.808Z	  
+2025-02-27T19:16:20.808Z	  ✘ [ERROR] Could not resolve "fs/promises"
+2025-02-27T19:16:20.809Z	  
+2025-02-27T19:16:20.809Z	      node_modules/@replit/vite-plugin-shadcn-theme-json/dist/index.mjs:2:15:
+2025-02-27T19:16:20.809Z	        2 │ import fs from "fs/promises";
+2025-02-27T19:16:20.809Z	          ╵                ~~~~~~~~~~~~~
+2025-02-27T19:16:20.809Z	  
+2025-02-27T19:16:20.809Z	    The package "fs/promises" wasn't found on the file system but is built into node.
+2025-02-27T19:16:20.809Z	    - Try removing the legacy "node_compat" setting and add the "nodejs_compat" compatibility flag in your project
+2025-02-27T19:16:20.810Z	    
+2025-02-27T19:16:20.810Z	  
+2025-02-27T19:16:20.810Z	  
+2025-02-27T19:16:20.810Z	  ✘ [ERROR] Could not resolve "lightningcss"
+2025-02-27T19:16:20.810Z	  
+2025-02-27T19:16:20.810Z	      node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:37952:59:
+2025-02-27T19:16:20.811Z	        37952 │ ...ightningCSS = createCachedImport(() => import('lightningcss'));
+2025-02-27T19:16:20.811Z	              ╵                                                  ~~~~~~~~~~~~~~
+2025-02-27T19:16:20.811Z	  
+2025-02-27T19:16:20.811Z	    You can mark the path "lightningcss" as external to exclude it from the bundle, which will remove this error. You can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+2025-02-27T19:16:20.811Z	  
+2025-02-27T19:16:20.811Z	  
+2025-02-27T19:16:20.811Z	  ✘ [ERROR] Unexpected external import of "node:fs/promises", "node:http2", "node:perf_hooks", "node:v8", and "node:worker_threads".
+2025-02-27T19:16:20.811Z	  Your worker has no default export, which means it is assumed to be a Service Worker format Worker.
+2025-02-27T19:16:20.811Z	  Did you mean to create a ES Module format Worker?
+2025-02-27T19:16:20.811Z	  If so, try adding `export default { ... }` in your entry-point.
+2025-02-27T19:16:20.812Z	  See https://developers.cloudflare.com/workers/reference/migrate-to-module-workers/. [plugin nodejs_compat-imports]
+2025-02-27T19:16:20.812Z	  
+2025-02-27T19:16:20.812Z	  
+2025-02-27T19:16:20.812Z	
+2025-02-27T19:16:20.812Z	
+2025-02-27T19:16:20.812Z	▲ [WARNING] "import.meta" is not available with the "iife" output format and will be empty [empty-import-meta]
+2025-02-27T19:16:20.812Z	
+2025-02-27T19:16:20.812Z	    dist/index.js:25:31:
+2025-02-27T19:16:20.812Z	      25 │ var __filename = fileURLToPath(import.meta.url);
+2025-02-27T19:16:20.812Z	         ╵                                ~~~~~~~~~~~
+2025-02-27T19:16:20.812Z	
+2025-02-27T19:16:20.812Z	  You need to set the output format to "esm" for "import.meta" to work correctly.
+2025-02-27T19:16:20.812Z	
+2025-02-27T19:16:20.813Z	
+2025-02-27T19:16:20.813Z	▲ [WARNING] "import.meta" is not available with the "iife" output format and will be empty [empty-import-meta]
+2025-02-27T19:16:20.813Z	
+2025-02-27T19:16:20.813Z	    dist/index.js:53:33:
+2025-02-27T19:16:20.813Z	      53 │ var __filename2 = fileURLToPath2(import.meta.url);
+2025-02-27T19:16:20.813Z	         ╵                                  ~~~~~~~~~~~
+2025-02-27T19:16:20.813Z	
+2025-02-27T19:16:20.814Z	  You need to set the output format to "esm" for "import.meta" to work correctly.
+2025-02-27T19:16:20.814Z	
+2025-02-27T19:16:20.814Z	
+2025-02-27T19:16:20.814Z	
+2025-02-27T19:16:20.814Z	
+2025-02-27T19:16:20.814Z	Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+2025-02-27T19:16:20.816Z	🪵  Logs were written to "/opt/buildhome/.config/.wrangler/logs/wrangler-2025-02-27_19-16-17_332.log"
+2025-02-27T19:16:20.874Z	Failed: error occurred while running deploy command
