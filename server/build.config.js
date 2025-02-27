@@ -23,18 +23,10 @@ export default {
 export const workerConfig = {
   entryPoints: ['server/worker.ts'],
   bundle: true,
-  platform: 'node',
+  platform: 'browser',
   format: 'esm',
   outfile: 'dist/worker.js',
-  external: [
-    'fs/promises',
-    'node:fs/promises',
-    'node:http2',
-    'node:perf_hooks',
-    'node:v8',
-    'node:worker_threads',
-    'lightningcss'
-  ],
+  target: 'es2022',
   define: {
     'process.env.NODE_ENV': '"production"'
   }

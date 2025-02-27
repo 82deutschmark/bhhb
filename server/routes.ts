@@ -1,7 +1,4 @@
-import type { Express } from "express";
-import { createServer, type Server } from "http";
-import { storage } from "./storage";
-
+import type { Request, Response } from 'express';
 // Function to handle API requests in the Worker environment
 export async function handleApiRequest(request: Request): Promise<Response> {
   const url = new URL(request.url);
@@ -11,9 +8,7 @@ export async function handleApiRequest(request: Request): Promise<Response> {
   };
 
   try {
-    // Add your API routes here
-    // Return Response objects directly for the Worker environment
-
+    // Add API routes here
     return new Response(
       JSON.stringify({ error: 'Not Found' }),
       { status: 404, headers }
@@ -25,15 +20,4 @@ export async function handleApiRequest(request: Request): Promise<Response> {
       { status: 500, headers }
     );
   }
-}
-
-// Express routes for development environment
-export async function registerRoutes(app: Express): Promise<Server> {
-  // Health check endpoint
-  app.get('/api/health', (_req, res) => {
-    res.json({ status: 'ok', timestamp: new Date().toISOString() });
-  });
-
-  const httpServer = createServer(app);
-  return httpServer;
 }

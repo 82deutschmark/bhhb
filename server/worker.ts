@@ -17,12 +17,13 @@ export default {
         });
       }
 
-      // Handle static assets from the bucket
+      // Serve static assets from the bucket
       if (!url.pathname.startsWith('/api')) {
+        console.log(`[Worker] Serving static asset: ${url.pathname}`);
         return env.ASSETS.fetch(request);
       }
 
-      // Handle API requests
+      // Health check endpoint
       if (url.pathname === '/api/health') {
         return new Response(
           JSON.stringify({ status: 'ok', timestamp: new Date().toISOString() }),
@@ -36,11 +37,10 @@ export default {
       }
 
       // Handle other API routes
-      const response = await handleApiRequest(request);
-      return response;
+      return await handleApiRequest(request);
 
     } catch (error) {
-      console.error('Worker error:', error);
+      console.error('[Worker] Error:', error);
       return new Response(
         JSON.stringify({ error: 'Internal Server Error' }), 
         { 

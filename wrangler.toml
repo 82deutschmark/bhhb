@@ -1,7 +1,15 @@
 name = "bighappyholding"
 main = "dist/worker.js"
 compatibility_date = "2023-12-01"
-nodejs_compat = true
+
+[build]
+command = "npm run build"
+
+[build.upload]
+format = "modules"
 
 [site]
 bucket = "dist/public"
+
+[build.environment]
+NODE_VERSION = "20"
